@@ -1,0 +1,43 @@
+@startuml kullanim_durumu
+' KampüsEmanet – Kullanım durumu diyagramı (BIL403 Grup 03)
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+actor "Öğrenci" as Ogrenci
+actor "Görevli" as Gorevli
+actor "Zaman\n(günlük kontrol)" as Zaman
+
+rectangle "KampüsEmanet" {
+  usecase "Kayıt ol" as UC1
+  usecase "Giriş yap" as UC2
+  usecase "Eşya ara" as UC3
+  usecase "Sahiplenme talebi gönder" as UC4
+  usecase "Talep durumunu görüntüle" as UC5
+  usecase "Talebi geri çek" as UC6
+  usecase "Bulunan eşyayı kaydet" as UC7
+  usecase "Eşya bilgisini düzenle" as UC8
+  usecase "Talebi onayla / reddet" as UC9
+  usecase "Diğer bekleyen talepleri reddet" as UC10
+  usecase "Teslim edildi olarak işaretle" as UC11
+  usecase "Süresi dolan eşyaları işaretle" as UC12
+}
+
+Ogrenci --> UC1
+Ogrenci --> UC2
+Ogrenci --> UC3
+Ogrenci --> UC4
+Ogrenci --> UC5
+Ogrenci --> UC6
+
+UC1 <-- Gorevli
+UC2 <-- Gorevli
+UC7 <-- Gorevli
+UC8 <-- Gorevli
+UC9 <-- Gorevli
+UC11 <-- Gorevli
+
+UC12 <-- Zaman
+
+UC10 .> UC9 : <<extend>>
+@enduml

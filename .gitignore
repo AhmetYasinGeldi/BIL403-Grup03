@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Sanal ortam
+.venv/
+venv/
+
+# Ortam değişkenleri (gizli bilgiler depoya konmaz)
+.env
+
+# Veritabanı ve Flask örnek klasörü
+instance/
+*.db
+*.sqlite3
+
+# Editör ve işletim sistemi
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
